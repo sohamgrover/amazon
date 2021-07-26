@@ -241,13 +241,13 @@ cursor: pointer;
 <div class="popup" id="popup">
 <p> Congratulations! </p><br>
 <div class="iphone12MidnightBlack">
-<img id="iphone12MidnightBlack" src="C:\Users\Hp\Desktop\Soham\Programming\projects\Fake iPhone 12 website\Images\Iphone 12 midnight black.webp">
+<img id="iphone12MidnightBlack" src="Iphone 12 midnight black.webp">
 <p> <br>iPhone 12 Pro Max Midnight Black </p><br>
 <p><b>₹00.00</b></p><br>
 <button id="claimNow">Claim now</button>
 </div>
 <div class="iphone12Gold">
-<img id="iphone12Gold" src="C:\Users\Hp\Desktop\Soham\Programming\projects\Fake iPhone 12 website\Images\iphone 12 gold.webp">
+<img id="iphone12Gold" src="iphone 12 gold.webp">
 <p> <br>iPhone 12 Pro Max Gold </p><br>
 <p><b>₹00.00</b></p><br>
 <button id="claimNow">Claim now</button>
@@ -256,18 +256,20 @@ cursor: pointer;
 <script>
 var random  = Math.floor(Math.random() * 33);
 function spin() {
-var audio = new Audio('');
+var audio = new Audio('spinning-wheel-123.mp3');
 audio.play(); 
 var math = 3062 + random;
 var mathTwo = 6530 + random;
 document.getElementById("wheel").style.transform = "rotate("+math+"deg)";
-setTimeout(function(){ document.getElementById("arrow").style.animationDuration="0.6s";}, 10000);
+setTimeout(function(){ document.getElementById("arrow").style.animationDuration="0.6s"; audio.pause();}, 10000);
 setTimeout(function(){alert("You received an Extra Chance!");
 document.getElementById("arrow").style.animationDuration="0s";
+audio.play();
 document.getElementById("wheel").style.transform = "rotate("+mathTwo+"deg)";
 }, 12000);
 setTimeout(function(){ 
 document.getElementById("arrow").style.animationDuration="0.6s";
+audio.pause();
 }, 22000);
 setTimeout(function(){ 
 alert("YOU WON AN IPHONE 12 PRO MAX! CONGRATULATIONS!!!");
