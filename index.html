@@ -48,7 +48,7 @@ animation-timing-function: linear;
 100% {background-color: yellow; color: red;}
 }
 #wheel {
-transition: all ease 10s;
+transition: all ease-out 10s;
 width: 40%;
 height: auto;
 position: absolute;
@@ -149,11 +149,69 @@ font-family: sans-serif;
 }
 .spinAndWinAnd {
 color: green;
-font-size: 201%;
+font-size: 200%;
 }
 .spinAndWinWin {
 color: red;
 font-family: sans-serif;
+}
+.popup {
+display: none;
+background: #EDEDED;
+color: black;
+font-size: 25px;
+border: 3px solid white;
+height: 41%;
+width: 41.5%;
+position: fixed;
+top: 30%;
+right: 30%;
+z-index: 3;
+transition: 1s ease;
+}
+#iphone12MidnightBlack {
+height: 70%;
+cursor: pointer;
+}
+#iphone12Gold {
+height: 70%;
+cursor: pointer;
+}
+.iphone12MidnightBlack {
+top: 35%;
+position: fixed;
+text-align: center;
+font-size: 15px;
+border: 2px solid black;
+height: 35%;
+z-index: 4;
+right: 30.5%;
+width: 20%
+}
+.iphone12Gold {
+top: 35%;
+border: 2px solid black;
+position: fixed;
+text-align: center;
+font-size: 15px;
+2px solid black;
+height: 35%;
+z-index: 4;
+right: 51%;
+width: 20%;
+}
+.iphone12MidnightBlack p{
+bottom: 0;
+}
+.iphone12Gold p{
+bottom: 0;
+}
+#claimNow {
+font-size: 20px;
+background: green;
+color: white;
+border: 1px solid white;
+cursor: pointer;
 }
 </style>
 </head>
@@ -180,10 +238,25 @@ font-family: sans-serif;
 <img id="logo" src="amazon-logo.png">
 <button id="spin" onclick="spin()">SPIN</button>
 </div>
+<div class="popup" id="popup">
+<p> Congratulations! </p><br>
+<div class="iphone12MidnightBlack">
+<img id="iphone12MidnightBlack" src="C:\Users\Hp\Desktop\Soham\Programming\projects\Fake iPhone 12 website\Images\Iphone 12 midnight black.webp">
+<p> <br>iPhone 12 Pro Max Midnight Black </p><br>
+<p><b>₹00.00</b></p><br>
+<button id="claimNow">Claim now</button>
+</div>
+<div class="iphone12Gold">
+<img id="iphone12Gold" src="C:\Users\Hp\Desktop\Soham\Programming\projects\Fake iPhone 12 website\Images\iphone 12 gold.webp">
+<p> <br>iPhone 12 Pro Max Gold </p><br>
+<p><b>₹00.00</b></p><br>
+<button id="claimNow">Claim now</button>
+</div>
+</div>
 <script>
 var random  = Math.floor(Math.random() * 33);
 function spin() {
-var audio = new Audio('https://drive.google.com/file/d/1xaCRCYbDq_GgAx_fhbOH5ozZYxN9X3uZ/view?usp=sharing');
+var audio = new Audio('');
 audio.play(); 
 var math = 3062 + random;
 var mathTwo = 6530 + random;
@@ -198,6 +271,8 @@ document.getElementById("arrow").style.animationDuration="0.6s";
 }, 22000);
 setTimeout(function(){ 
 alert("YOU WON AN IPHONE 12 PRO MAX! CONGRATULATIONS!!!");
+document.getElementById("popup").style.display="inline";
+document.getElementById("spin").style.display="none";
 }, 26000);
 }
 </script>
