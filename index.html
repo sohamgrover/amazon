@@ -154,6 +154,11 @@ font-size: 200%;
 .spinAndWinWin {
 color: red;
 font-family: sans-serif;
+} 
+.spinAndWinStarting {
+display: none;
+color: red;
+font-family: sans-serif;
 }
 .popup {
 display: none;
@@ -230,6 +235,8 @@ cursor: pointer;
 <p class="spinAndWinSpin">Spin</p>
 <p class="spinAndWinAnd">&</p>
 <p class="spinAndWinWin">Win</p>
+ <br>
+<p class="spinAndWinStarting" id="spinAndWinStarting">STARTING...</p>
 </div>
 <img id="wheel" src="wheel.png">
 <img id="search" src="search.png">
@@ -260,7 +267,11 @@ function spin() {
 audio.play(); 
 var math = 3062 + random;
 var mathTwo = 6530 + random;
+document.getElementById("spinAndWinStarting").style.display="block";
+setTimeout(function(){
 document.getElementById("wheel").style.transform = "rotate("+math+"deg)";
+document.getElementById("spinAndWinStarting").style.display= "none";                     
+}, 2000);
 setTimeout(function(){ document.getElementById("arrow").style.animationDuration="0.6s";             
 }, 10500);
 setTimeout(function(){ audio.pause()     
