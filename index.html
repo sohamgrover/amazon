@@ -271,10 +271,10 @@ document.getElementById("spinAndWinStarting").style.display="block";
 setTimeout(function(){
 document.getElementById("wheel").style.transform = "rotate("+math+"deg)";
 document.getElementById("spinAndWinStarting").style.display= "none";                     
-}, 2000);
+}, 1100);
 setTimeout(function(){ document.getElementById("arrow").style.animationDuration="0.6s";             
 }, 10500);
-setTimeout(function(){ audio.pause()     
+setTimeout(function(){ audio.stop()     
 }, 13000);
 setTimeout(function(){alert("You received an Extra Chance!");
 document.getElementById("arrow").style.animationDuration="0s";
@@ -286,7 +286,7 @@ setTimeout(function(){
 document.getElementById("arrow").style.animationDuration="0.6s";
 }, 22000);
 setTimeout(function(){ 
-audio.pause();
+audio.stop();
 }, 26000);
 setTimeout(function(){ 
 alert("YOU WON AN IPHONE 12 PRO MAX! CONGRATULATIONS!!!");
